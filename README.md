@@ -1,171 +1,204 @@
 # Angular Developer Interview Questions Cheat Sheet
 
-## 1. **Basic Questions**
-- **What is Angular?**  
-  A TypeScript-based front-end framework for building web applications.
-- **Angular vs AngularJS?**  
-  Angular is TypeScript-based and component-driven; AngularJS is JavaScript-based and uses controllers.
-- **Key features?**  
-  Components, Directives, Modules, Routing, Dependency Injection.
-- **Components vs Directives?**  
-  Components have templates; directives modify DOM behavior.
-- **Building blocks?**  
-  Modules, Components, Templates, Metadata, Services, Dependency Injection.
-- **Why TypeScript?**  
-  Strong typing, better tooling, and improved maintainability.
+1. Introduction to Angular
 
-## 2. **Angular Components & Modules**
-- **What is a Component?**  
-  A UI building block with HTML, CSS, and TypeScript.
-- **What is a Module?**  
-  A container for related components, directives, and services.
-- **Lifecycle hooks?**  
-  Methods like ngOnInit, ngOnDestroy for component lifecycle management.
-- **Component communication?**  
-  @Input(), @Output(), and services.
-- **ViewEncapsulation?**  
-  Controls component CSS scope (Emulated, ShadowDom, None).
+What is Angular?
 
-## 3. **Directives & Pipes**
-- **Structural vs Attribute Directives?**  
-  Structural changes DOM (e.g., *ngIf); Attribute modifies elements (e.g., [ngClass]).
-- **Custom Directive?**  
-  Use @Directive() and apply logic to elements.
-- **What is a Pipe?**  
-  Transforms data in templates (e.g., date, currency).
-- **Pure vs Impure Pipes?**  
-  Pure pipes run only on input changes; impure pipes run on every change.
-- **Built-in Pipes?**  
-  date, currency, uppercase, lowercase, async.
+A TypeScript-based open-source front-end framework maintained by Google.
 
-## 4. **Services & Dependency Injection**
-- **What is a Service?**  
-  A reusable business logic provider.
-- **Dependency Injection?**  
-  A design pattern for injecting dependencies.
-- **Ways to provide services?**  
-  Root-level (providedIn: 'root') or module-level.
-- **providedIn property?**  
-  Determines service availability scope.
+Used to create single-page applications (SPAs) with modular architecture and dependency injection.
 
-## 5. **Routing & Navigation**
-- **What is Angular Router?**  
-  Manages navigation between views.
-- **Types of routing?**  
-  Hash-based (# in URL) and Path-based.
-- **Pass parameters in routing?**  
-  Use route parameters or queryParams.
-- **Lazy loading?**  
-  Loads modules only when needed for performance.
-- **Route Guards?**  
-  Protect routes (AuthGuard, CanActivate, CanDeactivate).
+Provides declarative templates, component-based architecture, and extensive tooling.
 
-## 6. **Forms in Angular**
-- **Types of Forms?**  
-  Template-driven and Reactive Forms.
-- **Template vs Reactive Forms?**  
-  Template-driven is simpler; Reactive offers more control.
-- **Form validation?**  
-  Built-in (required, minLength) and custom validators.
-- **Handling form submission?**  
-  Use ngSubmit for template-driven, subscribe for reactive.
-- **FormGroup and FormControl?**  
-  Manage reactive forms and controls.
+What is TypeScript?
 
-## 7. **RxJS & Observables**
-- **What is RxJS?**  
-  A reactive programming library.
-- **Observable?**  
-  A stream of data that can be subscribed to.
-- **Observable vs Promise?**  
-  Observables are cancellable; Promises are not.
-- **What are Subjects?**  
-  Special observables that act as both observer and observable.
-- **Common RxJS Operators?**  
-  map, filter, switchMap, debounceTime.
+A strongly typed superset of JavaScript developed by Microsoft.
 
-## 8. **HTTP Client & API Communication**
-- **How to make HTTP requests?**  
-  Use HttpClientModule.
-- **Common HTTP methods?**  
-  GET, POST, PUT, DELETE.
-- **Error handling?**  
-  Use catchError in RxJS.
-- **What is an Interceptor?**  
-  Middleware for modifying HTTP requests/responses.
-- **Authentication & Authorization?**  
-  Use JWT or OAuth with HTTP Interceptor.
+Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
 
-## 9. **State Management**
-- **What is State Management?**  
-  Managing application state centrally.
-- **What is NgRx?**  
-  A Redux-based state management library.
-- **Actions, Reducers, Effects?**  
-  Actions trigger state changes, Reducers handle state updates, Effects handle side effects.
-- **NgRx vs BehaviorSubject?**  
-  NgRx is scalable; BehaviorSubject is simple and local.
-- **Other state management libraries?**  
-  Akita, NGXS.
+Angular is entirely written in TypeScript for better scalability and maintainability.
 
-## 10. **Testing in Angular**
-- **Types of testing?**  
-  Unit, Integration, End-to-End (E2E).
-- **What is Karma?**  
-  A test runner for Angular.
-- **What is Jasmine?**  
-  A testing framework for Angular.
-- **TestBed?**  
-  Configures and initializes Angular components in tests.
-- **Mocking dependencies?**  
-  Use Jasmine spies or Angular testing utilities.
+Main features of Angular:
 
-## 11. **Performance Optimization**
-- **How to improve performance?**  
-  Lazy loading, OnPush change detection, AOT.
-- **What is Change Detection?**  
-  Updates UI when data changes.
-- **OnPush Strategy?**  
-  Optimizes change detection using immutability.
-- **Optimize large lists?**  
-  Use trackBy in *ngFor.
-- **Lazy loading benefits?**  
-  Reduces initial load time.
+Modular architecture with reusable components.
 
-## 12. **Security in Angular**
-- **Common security risks?**  
-  XSS, CSRF, injection attacks.
-- **What is XSS?**  
-  Injecting malicious scripts.
-- **How does Angular prevent XSS?**  
-  Automatic HTML sanitization.
-- **What is CSP?**  
-  Content Security Policy restricts script execution.
-- **DomSanitizer?**  
-  Bypasses Angular’s security mechanism when needed.
+Two-way data binding synchronizing model and view.
 
-## 13. **Angular Build & Deployment**
-- **Production build command?**  
-  `ng build --prod`.
-- **What is AOT?**  
-  Ahead-of-Time compilation for faster rendering.
-- **Environment management?**  
-  Define multiple configurations in `angular.json`.
-- **What is Angular Universal?**  
-  Server-side rendering (SSR) for SEO.
-- **Deployment?**  
-  Upload `dist/` folder to a web server.
+Dependency Injection (DI) for improved modularity and maintainability.
 
-## 14. **Miscellaneous & Advanced Topics**
-- **Angular CLI purpose?**  
-  Automates project setup and management.
-- **What are Web Components?**  
-  Reusable UI elements across frameworks.
-- **What is SSR?**  
-  Server-Side Rendering improves SEO and performance.
-- **How to handle memory leaks?**  
-  Use unsubscribe and takeUntil.
-- **What are hybrid apps?**  
-  Apps using multiple front-end frameworks.
+Directives, Pipes, Routing, Lazy Loading, and State Management (NgRx).
+
+Comprehensive testing tools like Jasmine and Karma.
+
+How does an Angular application work?
+
+The angular.json file contains all configurations of the app.
+
+The entry point is defined in main.ts, which bootstraps AppModule.
+
+The app.module.ts file declares components, directives, and services.
+
+The root component (app.component.ts) is rendered inside index.html.
+
+Components have selectors, templates, and styles to manage UI behavior.
+
+2. Modules & Configuration
+
+How do the forRoot() and forChild() methods help in Angular module configuration?
+
+forRoot() is used in the root module to configure singleton services.
+
+forChild() is used in feature modules to configure routes and child dependencies.
+
+3. HTTP Client & API Communication
+
+What is HttpClientHandler, Interceptors, and what are their practical uses?
+
+HttpClientHandler processes HTTP requests and responses.
+
+Interceptors modify requests and responses globally (e.g., authentication, logging, error handling).
+
+Used for token injection, request transformation, and API monitoring.
+
+How does Angular's HTTP client handle request retrying?
+
+RxJS retry() operator is used to reattempt failed HTTP requests.
+
+Helps in handling transient network failures and improving app resilience.
+
+4. State Management
+
+What is the significance of NgRx in Angular applications?
+
+Implements Redux pattern for state management.
+
+Provides a unidirectional data flow with actions, reducers, effects, and selectors.
+
+Useful for large-scale applications requiring centralized state management.
+
+What is the significance of NgRx Store in Angular applications?
+
+Maintains application state in an immutable, observable manner.
+
+Improves state predictability, debugging, and separation of concerns.
+
+5. Change Detection & Performance Optimization
+
+How does Angular's change detection work and what are its architectural advantages?
+
+Uses Zone.js to track asynchronous operations and update the view.
+
+Supports OnPush strategy to optimize performance by detecting immutable data changes.
+
+Can you explain the concept of lazy loading in Angular and its benefits?
+
+Loads feature modules only when needed, reducing the initial bundle size.
+
+Improves performance and faster initial loading time.
+
+How does ahead-of-time (AOT) compilation improve Angular application performance?
+
+Compiles templates and TypeScript before runtime.
+
+Reduces runtime overhead, enhances security, and speeds up rendering.
+
+6. Forms in Angular
+
+How does Angular handle form validation? Differences between reactive and template-driven forms?
+
+Template-driven forms use directives (ngModel) and are simple but less scalable.
+
+Reactive forms use FormControl, FormGroup, and FormBuilder, offering better control.
+
+Supports built-in and custom validators.
+
+7. Testing in Angular
+
+What is the role of testing in Angular applications and key testing strategies?
+
+Unit testing with Jasmine and Karma for component logic.
+
+Integration testing for verifying multiple components working together.
+
+End-to-End (E2E) testing with Protractor or Cypress.
+
+What is the purpose of TestBed in Angular testing?
+
+Used to configure and initialize components in test cases.
+
+Mocks dependencies for isolated testing of Angular elements.
+
+8. Advanced TypeScript Concepts
+
+What is an abstract class in TypeScript and when would you use it?
+
+A class that cannot be instantiated directly but provides a blueprint for subclasses.
+
+Defines common properties and methods for derived classes.
+
+What is the purpose of using use strict mode in JavaScript?
+
+Enforces stricter parsing and error handling.
+
+Prevents accidental global variable declarations and unsafe actions.
+
+What is the purpose of re-exporting modules in JavaScript?
+
+Allows combining multiple module exports into a single module.
+
+Improves module organization and reduces import redundancy.
+
+9. Progressive Web Apps & Service Workers
+
+What is the concept of service workers in Angular and their role in building progressive web apps?
+
+Service workers run in the background, enabling offline support and caching strategies.
+
+Used for push notifications, background sync, and performance improvements.
+
+10. Miscellaneous Topics
+
+How do namespaces work in TypeScript?
+
+Used to organize code and prevent global scope pollution.
+
+Groups related interfaces, functions, and classes together.
+
+What role does finally play in a try-catch block?
+
+Executes cleanup code regardless of whether an error occurs or not.
+
+Ensures resource deallocation and consistent execution flow.
+
+What is a custom pipe and when would you use one?
+
+A user-defined transformation function for template data.
+
+Used for complex formatting like date conversions or filtering arrays.
+
+How can Angular's dependency injection system improve code maintainability and testability?
+
+Decouples dependencies, making components reusable and modular.
+
+Enables easy mocking and replacement of services in tests.
+
+How does Angular's model system support application scalability and modularity?
+
+Encourages component-based architecture for separation of concerns.
+
+Supports lazy loading, modular services, and state management.
+
+How is request caching implemented as an architectural constraint in RESTful services?
+
+Uses HTTP caching headers (ETag, Cache-Control).
+
+Improves response times and reduces server load.
+
+The architectural principles of microservices and their application in Angular projects?
+
+Microservices decompose an application into independent services.
+
+Angular consumes microservices via REST APIs, enabling modular front-end development.
+
 
 ---
