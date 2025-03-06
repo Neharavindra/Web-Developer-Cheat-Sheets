@@ -384,8 +384,9 @@ function example() {
 ### **53. What is `this` in JavaScript?** 
 - `this` refers to the object that is currently executing the function.
 - Its value depends on how and where the function is called.
+  
 | **Context**                             | **`this` Refers To**                          |
-| :-------------------------------------- | :-------------------------------------------- |
+| -------------------------------------- | -------------------------------------------- |
 | **Global Scope**                        | `window` (in browser) / `global` (in Node.js) |
 | **Function (Non-strict mode)**          | `window` (in browsers)                        |
 | **Function (Strict mode)**              | `undefined`                                   |
