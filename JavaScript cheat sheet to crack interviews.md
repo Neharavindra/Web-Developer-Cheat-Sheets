@@ -1,5 +1,4 @@
 # 🚀 JavaScript and TypeScript Interview Questions Cheat Sheet 🚀
----
 
 ### **1. What is JavaScript?**
 - JavaScript (JS) is a synchronous, single-threaded language.
