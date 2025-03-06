@@ -26,21 +26,21 @@
 5. `node_modules` - Includes all the packages installed.
 6. `tsconfig.json` - TypeScript configuration file. Specifies TypeScript compilation rules and target environments.
 7. `src` - Contains all source code of the Angular app.
-8. **app** – Main application logic.
-  - **app.module.ts** – Root module where components, services, and modules are registered.
-  - **app.component.ts** – Root component (entry point for the UI).
-  - **app.component.html** – Template (HTML structure) of the main component.
-  - **app.component.scss** – Styles for the main component.
-9. **test.ts** - Loads all spec files recursively for karma.conf.js
-10. **styles.css** - Global css file for global styles.
-11. **polyfills.ts** - Makes the code backward compatible with older versions of JavaScript.
-12. **main.ts** - Entry point, execution of the application starts here.
-13. **index.html** - Main html served to user.
-14. **favicon.io** - Application icon displayed in browser tab.
-15. **assets** - Stores static files like images, icons, and JSON data.
-16. **environments** – Environment configurations.
-  - **environment.ts** – Development settings.
-  - **environment.prod.ts** – Production settings.
+8. `app` – Main application logic.
+  - `app.module.ts` – Root module where components, services, and modules are registered.
+  - `app.component.ts` – Root component (entry point for the UI).
+  - `app.component.html` – Template (HTML structure) of the main component.
+  - `app.component.scss` – Styles for the main component.
+9. `test.ts` - Loads all spec files recursively for karma.conf.js
+10. `styles.css` - Global css file for global styles.
+11. `polyfills.ts` - Makes the code backward compatible with older versions of JavaScript.
+12. `main.ts` - Entry point, execution of the application starts here.
+13. `index.html` - Main html served to user.
+14. `favicon.io` - Application icon displayed in browser tab.
+15. `assets` - Stores static files like images, icons, and JSON data.
+16. `environments` – Environment configurations.
+  - `environment.ts` – Development settings.
+  - `environment.prod.ts` – Production settings.
 
 ### **4. What is template syntax in angular?**
 - Template syntax defines how Angular interacts with the DOM and components.
@@ -353,5 +353,22 @@ this.userForm = new FormGroup({
 - Route Guards in Angular control access to routes based on conditions.
 - Implemented using CanActivate, CanDeactivate, CanLoad, Resolve, and CanActivateChild.
 - They return true (allow navigation) or false (prevent navigation).
+
+### **37. Explain the difference between AngularJS and Angular?**
+
+| Feature            | AngularJS (1.x)              | Angular (2+)                     |
+|--------------------|----------------------------|----------------------------------|
+| **Architecture**   | MVC (Model-View-Controller) | Component-based architecture    |
+| **Language**       | JavaScript                 | TypeScript                      |
+| **Data Binding**   | Two-way data binding       | Two-way & one-way data binding  |
+| **Dependency Injection** | Limited support       | Powerful, hierarchical DI       |
+| **Mobile Support** | Not optimized for mobile  | Designed for mobile-first apps  |
+| **Performance**    | Slower due to digest cycle | Faster with AOT compilation & Ivy renderer |
+| **Directives**     | `ng-model`, `ng-repeat`, etc. | `*ngFor`, `*ngIf`, custom directives |
+| **Routing**        | `ngRoute` or `UI-Router`   | `@angular/router` module       |
+| **Modules**        | No modular system         | Uses `NgModule` for modularity  |
+| **DOM Handling**   | Manipulated directly      | Uses virtual DOM for efficiency |
+| **Support & Updates** | Discontinued (no updates) | Actively maintained by Google  |
+
 
 ---
