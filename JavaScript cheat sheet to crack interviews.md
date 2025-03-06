@@ -7,11 +7,21 @@
 - It runs in the browser's execution environment but can also be used on the server-side via Node.js.
 
 ### **2. Explain execution context in JS.**
-- Everything happens in an execution context. 
-- JavaScript first creates a memory environment (variable environment) and then executes code (thread of execution).
-- After execution, the global execution context is destroyed.
+- The Execution Context is an environment where JavaScript code is executed.
+- It contains the global object (`window` in browsers, `global` in Node.js).
 - The Call Stack maintains the order of execution.
 - Memory is allocated to all variables and functions before code execution starts.
+- After execution, the global execution context is destroyed.
+- Phases of execution context: 
+1. **Creation Phase**
+   - **Memory allocation** for variables and functions.
+   - Variables get `undefined` (hoisting).
+   - Functions are stored in memory.
+
+2. **Execution Phase**
+   - Code is executed line by line.
+   - Variables are assigned values.
+   - Functions are invoked.
 
 ### **3. What is Just-In-Time (JIT) compilation?**
 - JIT compilation translates high-level language code into machine code at runtime.
@@ -371,16 +381,30 @@ function example() {
   Promise.all([p1, p2, p3]).then(console.log); // [10, 20, 30] after 1 second
 ```
 
-### **53. What is TypeScript?**
+### **53. What is `this` in JavaScript?** 
+- `this` refers to the object that is currently executing the function.
+- Its value depends on how and where the function is called.
+| **Context**                  | **`this` Refers To**                     |
+|------------------------------|-----------------------------------------|
+| **Global Scope**             | `window` (in browser) / `global` (in Node.js) |
+| **Function (Non-strict mode)** | `window` (in browsers) |
+| **Function (Strict mode)**   | `undefined` |
+| **Object Method**            | The calling object |
+| **Arrow Function**           | Inherited `this` from parent scope |
+| **Constructor Function**     | The new instance object |
+| **Event Listener**           | The DOM element that triggered the event |
+| **Using `call()`, `apply()`, `bind()`** | Explicitly set object |
+
+### **54. What is TypeScript?**
 - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
 - Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
 - Angular is entirely written in TypeScript for better scalability and maintainability.
 
-### **54. What is an abstract class in TypeScript and when would you use it?**
+### **55. What is an abstract class in TypeScript and when would you use it?**
 - A class that cannot be instantiated directly but provides a blueprint for subclasses.
 - Defines common properties and methods for derived classes.
 
-### **55. How do namespaces work in TypeScript?**
+### **56. How do namespaces work in TypeScript?**
 - Used to organize code and prevent global scope pollution.
 - Groups related interfaces, functions, and classes together.
 
