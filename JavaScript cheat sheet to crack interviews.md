@@ -1,6 +1,5 @@
-# JavaScript and TypeScript Interview Questions Cheat Sheet
-
-## **JavaScript Interview Questions**
+# 🚀 JavaScript and TypeScript Interview Questions Cheat Sheet 🚀
+---
 
 ### **1. What is JavaScript?**
 - JavaScript (JS) is a synchronous, single-threaded language.
@@ -346,24 +345,18 @@ function example() {
   const p3 = Promise.resolve(30);
   Promise.all([p1, p2, p3]).then(console.log); // [10, 20, 30] after 1 second
 ```
----
 
-## **TypeScript Interview Questions**
+### **51. What is TypeScript?**
+- A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
+- Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
+- Angular is entirely written in TypeScript for better scalability and maintainability.
 
-- **What is TypeScript?**
+### **52. What is an abstract class in TypeScript and when would you use it?**
+- A class that cannot be instantiated directly but provides a blueprint for subclasses.
+- Defines common properties and methods for derived classes.
 
-  - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
-  - Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
-  - Angular is entirely written in TypeScript for better scalability and maintainability.
-
-- **What is an abstract class in TypeScript and when would you use it?**
-
-  - A class that cannot be instantiated directly but provides a blueprint for subclasses.
-  - Defines common properties and methods for derived classes.
-
-- **How do namespaces work in TypeScript?**
-
-  - Used to organize code and prevent global scope pollution.
-  - Groups related interfaces, functions, and classes together.
+### **53. How do namespaces work in TypeScript?**
+- Used to organize code and prevent global scope pollution.
+- Groups related interfaces, functions, and classes together.
 
 ---
