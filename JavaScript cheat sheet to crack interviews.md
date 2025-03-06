@@ -20,37 +20,11 @@
 - Commonly used in web browsers to **improve performance**.
 - Unlike interpreted languages, JIT compiles and executes code **simultaneously**.
 
-### **4. What are first-class functions?**
-- Functions are treated like **any other variable**.
-- Functions can be:
-  - **Assigned to a variable**.
-  - **Passed as an argument** to another function.
-  - **Returned from another function**.
-
-### **5. What are higher-order functions?**
-- A **higher-order function** is a function that **accepts another function as an argument** or **returns a function as a result**.
-- Allows **reusability and abstraction**.
-
-### **6. What are the different types of variable declarations in JS?**
-- **`var`**: Function-scoped, can be **redeclared** and **updated**, hoisted.
-- **`let`**: Block-scoped, cannot be redeclared in the same scope, hoisted but **not initialized**.
-- **`const`**: Block-scoped, **read-only**, cannot be reassigned.
-
-### **7. What is hoisting in JS?**
-- Hoisting moves **variable and function declarations** to the **top of their scope** before execution.
-- Only **declarations** are hoisted, not value assignments.
-
-### **8. What is the Temporal Dead Zone (TDZ)?**
-- A variable declared with `let`, `const`, or `class` is in a **Temporal Dead Zone (TDZ)** from the start of the block until it is initialized.
-
-### **9. What are global variables?**
-- Global variables are **properties of the global object** (`window` in browsers).
-
-### **10. What are the data types in JavaScript?**
+### **4. What are the data types in JavaScript?**
 - **Primitive Data Types**: Boolean, number, string, BigInt, null, undefined, symbol.
 - **Non-Primitive Data Types**: Object (arrays, functions, sets, maps, etc.).
 
-### **11. What is type coercion in JavaScript?**
+### **5. What is type coercion in JavaScript?**
 - JavaScript automatically converts data types **during operations**.
 - Example:
 ```javascript
@@ -58,44 +32,37 @@ console.log('5' + 3); // "53" (string concatenation)
 console.log('5' - 3); // 2 (numeric conversion)
 ```
 
-### **12. What is 'use strict' mode?**
-- `"use strict"` enforces better coding practices.
-- Prevents accidental global variables.
-- Declared at the beginning of a script or function.
+### **6. What are the different types of variable declarations in JS?**
+- **`var`**: Function-scoped, can be **redeclared** and **updated**, hoisted.
+- **`let`**: Block-scoped, cannot be redeclared in the same scope, hoisted but **not initialized**.
+- **`const`**: Block-scoped, **read-only**, cannot be reassigned.
 
-### **13. What is the difference between `==` and `===` operators?**
-- `==` **compares values** and performs **type conversion**.
-- `===` **strictly compares** both **value and type**.
+### **7. What are global variables?**
+- Global variables are **properties of the global object** (`window` in browsers).
 
-### **14. What is a try-catch statement?**
-- `try` contains code that may throw an error.
-- `catch` handles errors if they occur.
+### **8. What is function scope?**
+- Variables defined inside a function **cannot be accessed outside the function**.
+- Functions have access to variables in their **parent scope** but not the other way around.
 
-### **15. What is the finally block?**
-- The `finally` block **always executes** after `try` and `catch`, regardless of an error.
+### **9. What are first-class functions?**
+- Functions are treated like **any other variable**.
+- Functions can be:
+  - **Assigned to a variable**.
+  - **Passed as an argument** to another function.
+  - **Returned from another function**.
 
-### **16. What is pass by value and pass by reference in JS?**
-- **Primitive types** are passed **by value** (copied to a new memory location).
-- **Objects and arrays** are passed **by reference** (point to the same memory location).
+### **10. What are higher-order functions?**
+- A **higher-order function** is a function that **accepts another function as an argument** or **returns a function as a result**.
+- Allows **reusability and abstraction**.
 
-### **14. What are different kinds of statements for loops in JS?**
-- **For**: Iterates over indexes as long as the condition is met.
-- **Do-while**: Executes the statement before checking the condition.
-- **While**: Executes the statement as long as the condition is true.
-- **Label**: Names a loop to refer back to it later.
-- **Break**: Stops execution of the nearest enclosing loop.
-- **Continue**: Skips the current iteration and continues the next.
-- **For-in**: Iterates over enumerable properties of an object.
-- **For-of**: Iterates over iterable objects (arrays, strings, maps, sets, etc.).
-
-### **15. What is function definition in JS?**
+### **11. What is function definition in JS?**
 - A function definition (or function declaration) consists of the `function` keyword, a name, parameters, and function statements enclosed in curly braces.
 
-### **16. What is the difference between a parameter and an argument?**
+### **12. What is the difference between a parameter and an argument?**
 - A **parameter** is the variable in a function definition.
 - An **argument** is the value passed to the function when invoked.
 
-### **17. What are different kinds of function expressions in JS?**
+### **13. What are different kinds of function expressions in JS?**
 - **Anonymous function expression**: A function without a name.
 ```javascript
 const square = function(n) { return n * n; };
@@ -105,21 +72,60 @@ const square = function(n) { return n * n; };
 const square = function squ(n) { return n * n; };
 ```
 
-### **18. What is function hoisting?**
+### **14. What is function hoisting?**
 - JavaScript moves function declarations to the top of their scope.
 - Only works with **function declarations**, not function expressions.
 
-### **19. What are Immediately Invoked Function Expressions (IIFE)?**
+### **15. What are Immediately Invoked Function Expressions (IIFE)?**
 - A function that executes immediately after it is defined.
 ```javascript
 (function () { console.log("IIFE executed"); })();
 ```
 
-### **20. What is function scope?**
-- Variables defined inside a function **cannot be accessed outside the function**.
-- Functions have access to variables in their **parent scope** but not the other way around.
+### **16. What are arrow functions?**
+- A shorter syntax for function expressions without their own `this`.
+```javascript
+const add = (a, b) => a + b;
+```
 
-### **21. What are closures?**
+### **17. What is the Temporal Dead Zone (TDZ)?**
+- A variable declared with `let`, `const`, or `class` is in a **Temporal Dead Zone (TDZ)** from the start of the block until it is initialized.
+
+### **18. What is hoisting in JS?**
+- Hoisting moves **variable and function declarations** to the **top of their scope** before execution.
+- Only **declarations** are hoisted, not value assignments.
+
+### **19. What is 'use strict' mode?**
+- Strict Mode allows you to write a code or a function in a "strict" operational environment.
+-	Useful to write secure JS by notifying bad syntax.
+- `"use strict"` Declared at the beginning of a script or function.
+
+### **20. What is the difference between `==` and `===` operators?**
+- `==` **compares values** and performs **type conversion**.
+- `===` **strictly compares** both **value and type**.
+
+### **21. What is a try-catch statement?**
+- `try` contains code that may throw an error.
+- `catch` handles errors if they occur.
+
+### **22. What is the finally block?**
+- The `finally` block **always executes** after `try` and `catch`, regardless of an error.
+
+### **23. What is pass by value and pass by reference in JS?**
+- **Primitive types** are passed **by value** (copied to a new memory location).
+- **Objects and arrays** are passed **by reference** (point to the same memory location).
+
+### **24. What are different kinds of statements for loops in JS?**
+- **For**: Iterates over indexes as long as the condition is met.
+- **Do-while**: Executes the statement before checking the condition.
+- **While**: Executes the statement as long as the condition is true.
+- **Label**: Names a loop to refer back to it later.
+- **Break**: Stops execution of the nearest enclosing loop.
+- **Continue**: Skips the current iteration and continues the next.
+- **For-in**: Iterates over enumerable properties of an object.
+- **For-of**: Iterates over iterable objects (arrays, strings, maps, sets, etc.).
+
+### **25. What are closures?**
 - A closure is a function that remembers variables from its parent scope even after the parent function has executed.
 - Example:
 ```javascript
@@ -134,7 +140,7 @@ const counter = outer();
 counter(); // Output: 1
 ```
 
-### **22. What is a rest parameter?**
+### **26. What is a rest parameter?**
 - The rest parameter syntax allows a function to accept an **indefinite number of arguments** as an array.
 ```javascript
 function sum(...numbers) {
@@ -143,38 +149,27 @@ function sum(...numbers) {
 console.log(sum(1, 2, 3)); // Output: 6
 ```
 
-### **23. What are arrow functions?**
-- A shorter syntax for function expressions without their own `this`.
-```javascript
-const add = (a, b) => a + b;
-```
-
-### **24. What are template literals?**
+### **27. What are template literals?**
 - A way to define strings that allows embedding expressions and multi-line formatting.
 ```javascript
 const name = "John";
 console.log(`Hello, ${name}!`);
 ```
 
-### **25. What is lexical scope?**
+### **28. What is lexical scope?**
 - The scope of a variable is determined by **where it is declared**, not where it is called.
 
-### **26. What are the types of popup boxes available in JavaScript?**
+### **29. What are the types of popup boxes available in JavaScript?**
 - **Alert**: Displays a message.
 - **Confirm**: Asks for user confirmation (OK/Cancel).
 - **Prompt**: Asks for user input.
 
----
+### **30. What is the Event Loop & Microtask Queue?**
+- The **Event Loop** is a mechanism that allows JavaScript to execute **asynchronous operations**.
+- It continuously checks the call stack to see if there are any functions to execute and if the call stack is empty, it checks the callback queue for events that need to be processed.
+- **Microtasks (Promises, `process.nextTick`) have higher priority** and execute before callbacks (`setTimeout`, `setInterval`) from the queue.
 
-This document provides **comprehensive JavaScript interview questions and answers**, covering functions, loops, closures, and scope. Let me know if you'd like modifications! 🚀
-
-
-
-### **27. What is the Event Loop & Microtask Queue?**
-- The **Event Loop** handles **asynchronous operations**.
-- **Microtasks (Promises, MutationObserver)** run **before Macrotasks** (`setTimeout`, `setInterval`).
-
-### **28. What is the Fetch API?**
+### **31. What is the Fetch API?**
 - The Fetch API is used for making **HTTP requests**.
 - Example:
 ```javascript
@@ -183,11 +178,11 @@ fetch('https://api.example.com/data')
   .then(data => console.log(data));
 ```
 
-### **29. What is Garbage Collection in JavaScript?**
+### **32. What is Garbage Collection in JavaScript?**
 - JavaScript **automatically removes unused objects** to free memory.
 - Uses **Mark-and-Sweep** algorithm.
 
-### **30. What is async/await in JavaScript?**
+### **33. What is async/await in JavaScript?**
 - `async` makes a function return a **Promise**.
 - `await` pauses execution **until the Promise resolves**.
 - Example:
@@ -200,11 +195,11 @@ async function fetchData() {
 fetchData();
 ```
 
-### **31. What is memory heap in JavaScript?**
+### **34. What is memory heap in JavaScript?**
 - The **heap** is where JavaScript **allocates objects and functions** in memory.
 - JavaScript manages memory using **garbage collection**.
 
-### **32. What is currying in JavaScript?**
+### **35. What is currying in JavaScript?**
 - Currying transforms a function with multiple arguments into a sequence of functions.
 - Example:
 ```javascript
@@ -212,25 +207,25 @@ const add = a => b => c => a + b + c;
 console.log(add(1)(2)(3)); // 6
 ```
 
-### **33. What is a Promise in JavaScript?**
+### **36. What is a Promise in JavaScript?**
 - A Promise represents a **future value**.
 - Can be in **pending, fulfilled, or rejected** states.
 - Used to **handle asynchronous operations**.
 
-### **34. What is the difference between synchronous and asynchronous code in JavaScript?**
+### **37. What is the difference between synchronous and asynchronous code in JavaScript?**
 - **Synchronous code** runs line by line.
 - **Asynchronous code** runs independently, allowing execution of other tasks.
 
-### **35. What is a shallow copy vs. deep copy?**
+### **38. What is a shallow copy vs. deep copy?**
 - **Shallow Copy**: Copies only the first-level properties, keeping references to nested objects.
 - **Deep Copy**: Copies all nested objects recursively, creating **independent clones**.
 
-### **36. What is the difference between call, apply, and bind methods?**
+### **39. What is the difference between call, apply, and bind methods?**
 - `call()` invokes a function with individual arguments.
 - `apply()` invokes a function with an array of arguments.
 - `bind()` returns a new function with a specific `this` value.
 
-### **37. What is memoization in JavaScript?**
+### **40. What is memoization in JavaScript?**
 - Memoization **caches function results** to improve performance.
 - Example:
 ```javascript
@@ -240,11 +235,121 @@ const memoizedAdd = () => {
 };
 ```
 
-### **38. What is the purpose of re-exporting modules in JavaScript?**
+### **41. What is the purpose of re-exporting modules in JavaScript?**
 
   - Allows combining multiple module exports into a single module.
   - Improves module organization and reduces import redundancy.
 
+### **42. What is debouncing in JavaScript?**
+
+  - Debouncing is a technique used to delay function execution until a certain time has passed since the last event.
+  - Instead of calling a function every time an event (like keypress or scroll) occurs, debouncing waits for a pause before executing the function.
+
+### **43. What are Callback Functions in JavaScript?**
+- A **callback function** is a function that is passed as an argument to another function and executed later.
+- It allows handling **asynchronous operations**, ensuring that code runs **after** a task completes.
+- Used in **event listeners, timers (`setTimeout`, `setInterval`), and API calls (`fetch`, `XMLHttpRequest`).**
+- Example:
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    console.log("Data fetched");
+    callback();
+  }, 2000);
+}
+function processData() {
+  console.log("Processing data");
+}
+fetchData(processData);
+```
+
+### **44. What is the Callback Queue in JavaScript?**
+- **Callback Queue** stores **asynchronous callbacks** that are waiting to be executed.
+- Callbacks from `setTimeout`, `setInterval`, and I/O tasks go into the **Callback Queue**.
+- **How it works:**
+  - The **Call Stack** must be **empty** before a callback from the queue is executed.
+  - The **Event Loop** continuously checks for pending tasks in the queue.
+
+- Example:
+```javascript
+console.log("Start");
+setTimeout(() => console.log("Callback executed"), 0);
+console.log("End");
+```
+**Output:**
+```
+Start
+End
+Callback executed
+```
+- Even though `setTimeout` has a `0ms` delay, it moves to the **Callback Queue** and executes **after** the main thread is free.
+
+### **45. What is the difference between `let` and `var` in JavaScript?**
+1. **Scope**  
+   - `var` is **function-scoped**, meaning it is accessible throughout the function in which it is declared.  
+   - `let` is **block-scoped**, meaning it is only accessible within the block `{}` in which it is declared.  
+2. **Hoisting**  
+   - Variables declared with `var` are **hoisted** to the top of their scope and initialized with `undefined`.  
+   - Variables declared with `let` are **hoisted** but not initialized, leading to a **Temporal Dead Zone (TDZ)** until they are assigned a value.  
+3. **Redeclaration**  
+   - `var` allows redeclaration within the same scope without errors.  
+   - `let` does **not** allow redeclaration in the same scope and will throw an error.  
+4. **Global Object Property**  
+   - `var` declarations at the global level create a property on the `window` object (in browsers).  
+   - `let` does **not** create a property on the global object.  
+
+   - Example:
+```javascript
+function example() {
+    console.log(a); // undefined
+    console.log(b); // ReferenceError: Cannot access 'b' before initialization
+
+    var a = 10;
+    let b = 20;
+}
+```
+
+### **46. What is ECMAScript?**
+- ECMAScript (ES) is the standardized specification for JavaScript, maintained by **ECMA International**.
+- It defines the core features of JavaScript, ensuring consistency across different implementations such as browsers and Node.js.
+
+### **47. What is the difference between ECMAScript and JavaScript?**
+- ECMAScript is the **standard** that defines how JavaScript should work. JavaScript is the **implementation** of ECMAScript in browsers and other environments.
+
+### **48. What is the purpose of the `spread` (`...`) and `rest` (`...`) operators?**
+- **Spread Operator (`...`)** – Expands arrays or objects into individual elements.  
+  ```javascript
+  const arr = [1, 2, 3];
+  const newArr = [...arr, 4, 5]; // [1, 2, 3, 4, 5]
+  ```
+- **Rest Operator (`...`)** – Gathers multiple arguments into an array. 
+  ```javascript
+  function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+  }
+  console.log(sum(1, 2, 3, 4)); // 10
+  ```
+
+### **48: What is optional chaining (?.) in ECMAScript?**
+- Optional chaining allows safe access to **deeply nested** object properties without checking if intermediate properties exist.
+```javascript
+  const user = { profile: { name: "John" } };
+  console.log(user.profile?.name); // "John"
+  console.log(user.address?.city); // undefined (instead of an error)
+```
+
+### **49. What is the difference between null and undefined?**
+- **null** – Explicitly set value, representing the absence of an object.
+- **undefined** – A variable that has been declared but not assigned a value.
+
+### **50. What is the Promise.all() method?**
+- **Promise.all()** takes multiple promises and resolves when all promises are fulfilled or rejects if one fails.
+```javascript
+  const p1 = Promise.resolve(10);
+  const p2 = new Promise((resolve) => setTimeout(() => resolve(20), 1000));
+  const p3 = Promise.resolve(30);
+  Promise.all([p1, p2, p3]).then(console.log); // [10, 20, 30] after 1 second
+```
 ---
 
 ## **TypeScript Interview Questions**
