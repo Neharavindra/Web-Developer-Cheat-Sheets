@@ -1,4 +1,4 @@
-# 🚀 JavaScript and TypeScript Interview Questions Cheat Sheet 🚀
+# 🚀 JavaScript and TypeScript Interview Cheat Sheet 🚀
 
 ### **1. What is JavaScript?**
 - JavaScript (JS) is a synchronous, single-threaded language.
@@ -304,7 +304,7 @@ function example() {
 }
 ```
 
-### **46. Explain map, reduce and filter in JavaScript?
+### **46. Explain map, reduce and filter in JavaScript?**
 - **map**: 
 - Used to transform each element in an array and return a new array.
 - Does not modify the original array.
@@ -396,17 +396,65 @@ function example() {
 | **Event Listener**                      | The DOM element that triggered the event      |
 | **Using `call()`, `apply()`, `bind()`** | Explicitly set object                         |
 
-### **54. What is TypeScript?**
+### **54. What is scope chaining in JavaScript?**
+- Scope chaining is the process where nested functions can access variables from their parent functions.
+- If a variable is not found in the current scope, JavaScript looks up the scope chain until it reaches the global scope.
+- Used in closures to maintain access to outer variables.
+```javascript
+function outer() {
+  let a = 10;
+  function inner() {
+    console.log(a); // Accesses 'a' from outer function
+  }
+  inner();
+}
+outer(); // Output: 10
+```
+
+### **55. What is shadowing in JavaScript?**
+- Shadowing occurs when a variable in the inner scope has the same name as a variable in the outer scope.
+- The inner variable overrides the outer variable within its scope.
+```javascript
+let x = "Global";
+function test() {
+  let x = "Local"; // Shadows global 'x'
+  console.log(x);
+}
+test(); // Output: Local
+console.log(x); // Output: Global
+```
+
+### **56. What is TypeScript?**
 - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
 - Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
 - Angular is entirely written in TypeScript for better scalability and maintainability.
 
-### **55. What is an abstract class in TypeScript and when would you use it?**
+### **57. What is an abstract class in TypeScript and when would you use it?**
 - A class that cannot be instantiated directly but provides a blueprint for subclasses.
 - Defines common properties and methods for derived classes.
 
-### **56. How do namespaces work in TypeScript?**
+### **58. How do namespaces work in TypeScript?**
 - Used to organize code and prevent global scope pollution.
 - Groups related interfaces, functions, and classes together.
+
+### **59. What are the data types in TypeScript?**
+- TypeScript supports static typing with the following data types:
+1. **Primitive Types:** number, string, boolean, bigint, null, undefined, symbol.
+2. **Object Types:** Array, Tuple, Object.
+3. **Special Types:** any, void, never, unknown.
+
+### **60. What is type casting?**
+- Type casting allows converting one type to another using:
+- **Angle-bracket syntax**: <Type>variable
+- **as keyword**: variable as Type
+
+### **61. How do functions work in typescript?**
+- Functions in TypeScript support parameter types, return types, optional parameters, and default values.
+
+### **62. . What is class visibility in TypeScript?**
+- TypeScript uses access modifiers to control visibility:
+1. **public**: Accessible everywhere (default).
+2. **private**: Accessible only inside the class.
+3. **protected**: Accessible inside the class and subclasses.
 
 ---
