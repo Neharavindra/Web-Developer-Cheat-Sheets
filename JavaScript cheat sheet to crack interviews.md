@@ -451,7 +451,7 @@ console.log(x); // Output: Global
 ### **61. How do functions work in typescript?**
 - Functions in TypeScript support parameter types, return types, optional parameters, and default values.
 
-### **62. . What is class visibility in TypeScript?**
+### **62. What is class visibility in TypeScript?**
 - TypeScript uses access modifiers to control visibility:
 1. **public**: Accessible everywhere (default).
 2. **private**: Accessible only inside the class.
