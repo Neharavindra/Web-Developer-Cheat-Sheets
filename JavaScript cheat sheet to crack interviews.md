@@ -384,16 +384,16 @@ function example() {
 ### **53. What is `this` in JavaScript?** 
 - `this` refers to the object that is currently executing the function.
 - Its value depends on how and where the function is called.
-| **Context**                   | **`this` Refers To**                           |
-|--------------------------------|-----------------------------------------------|
-| **Global Scope**               | `window` (in browser) / `global` (in Node.js) |
-| **Function (Non-strict mode)**  | `window` (in browsers)                       |
-| **Function (Strict mode)**      | `undefined`                                  |
-| **Object Method**              | The calling object                           |
-| **Arrow Function**             | Inherited `this` from parent scope           |
-| **Constructor Function**       | The new instance object                      |
-| **Event Listener**             | The DOM element that triggered the event     |
-| **Using `call()`, `apply()`, `bind()`** | Explicitly set object              |
+| **Context**                             | **`this` Refers To**                         |
+|-----------------------------------------|----------------------------------------------|
+| **Global Scope**                        | `window` (in browser) / `global` (in Node.js)|
+| **Function (Non-strict mode)**          | `window` (in browsers)                       |
+| **Function (Strict mode)**              | `undefined`                                  |
+| **Object Method**                       | The calling object                           |
+| **Arrow Function**                      | Inherited `this` from parent scope           |
+| **Constructor Function**                | The new instance object                      |
+| **Event Listener**                      | The DOM element that triggered the event     |
+| **Using `call()`, `apply()`, `bind()`** | Explicitly set object                        |
 
 ### **54. What is TypeScript?**
 - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
