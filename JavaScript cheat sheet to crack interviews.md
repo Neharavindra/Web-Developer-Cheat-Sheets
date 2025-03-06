@@ -24,7 +24,6 @@
 
 ### **5. What is type coercion in JavaScript?**
 - JavaScript automatically converts data types during operations.
-- Example:
 ```javascript
 console.log('5' + 3); // "53" (string concatenation)
 console.log('5' - 3); // 2 (numeric conversion)
@@ -125,7 +124,6 @@ const add = (a, b) => a + b;
 
 ### **25. What are closures?**
 - A closure is a function that remembers variables from its parent scope even after the parent function has executed.
-- Example:
 ```javascript
 function outer() {
   let count = 0;
@@ -169,7 +167,6 @@ console.log(`Hello, ${name}!`);
 
 ### **31. What is the Fetch API?**
 - The Fetch API is used for making HTTP requests.
-- Example:
 ```javascript
 fetch('https://api.example.com/data')
   .then(response => response.json())
@@ -183,7 +180,6 @@ fetch('https://api.example.com/data')
 ### **33. What is async/await in JavaScript?**
 - `async` makes a function return a Promise.
 - `await` pauses execution until the Promise resolves.
-- Example:
 ```javascript
 async function fetchData() {
   let response = await fetch('https://api.example.com/data');
@@ -199,7 +195,6 @@ fetchData();
 
 ### **35. What is currying in JavaScript?**
 - Currying transforms a function with multiple arguments into a sequence of functions.
-- Example:
 ```javascript
 const add = a => b => c => a + b + c;
 console.log(add(1)(2)(3)); // 6
@@ -225,7 +220,6 @@ console.log(add(1)(2)(3)); // 6
 
 ### **40. What is memoization in JavaScript?**
 - Memoization caches function results to improve performance.
-- Example:
 ```javascript
 const memoizedAdd = () => {
   let cache = {};
@@ -245,7 +239,6 @@ const memoizedAdd = () => {
 - A callback function is a function that is passed as an argument to another function and executed later.
 - It allows handling asynchronous operations, ensuring that code runs after a task completes.
 - Used in event listeners, timers (`setTimeout`, `setInterval`), and API calls (`fetch`, `XMLHttpRequest`).
-- Example:
 ```javascript
 function fetchData(callback) {
   setTimeout(() => {
@@ -259,13 +252,12 @@ function processData() {
 fetchData(processData);
 ```
 
-### **44. What is the Callback Queue in JavaScript?**
+### **44. What is Callback Queue in JavaScript?**
 - **Callback Queue** stores asynchronous callbacks that are waiting to be executed.
 - Callbacks from `setTimeout`, `setInterval`, and I/O tasks go into the Callback Queue.
 - **How it works:**
   - The Call Stack must be empty before a callback from the queue is executed.
   - The Event Loop continuously checks for pending tasks in the queue.
-- Example:
 ```javascript
 console.log("Start");
 setTimeout(() => console.log("Callback executed"), 0);
@@ -292,7 +284,6 @@ Callback executed
 4. **Global Object Property**  
    - `var` declarations at the global level create a property on the `window` object (in browsers).  
    - `let` does not create a property on the global object.  
-   - Example:
 ```javascript
 function example() {
     console.log(a); // undefined
@@ -303,14 +294,49 @@ function example() {
 }
 ```
 
-### **46. What is ECMAScript?**
+### **46. Explain map, reduce and filter in JavaScript?
+- **map**: 
+- Used to transform each element in an array and return a new array.
+- Does not modify the original array.
+```javascript
+  const numbers = [1, 2, 3, 4];
+  const doubled = numbers.map(num => num * 2);
+  console.log(doubled); // [2, 4, 6, 8]
+```
+- **filter**:
+- Used to filter elements based on a condition.
+- Returns a new array with elements that satisfy the condition.
+```javascript
+  const numbers = [1, 2, 3, 4, 5, 6];
+  const evens = numbers.filter(num => num % 2 === 0);
+  console.log(evens); // [2, 4, 6]
+```
+- **reduce**: 
+- Used to reduce an array to a single value (sum, product, average, etc.).
+- Takes a callback function with an accumulator and the current value.
+```javascript
+  const numbers = [1, 2, 3, 4];
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+  console.log(sum); // 10
+```
+- Using all three together
+```javascript
+  const numbers = [1, 2, 3, 4, 5, 6];
+  const result = numbers
+    .filter(num => num % 2 === 0)  // [2, 4, 6]
+    .map(num => num * num)         // [4, 16, 36]
+    .reduce((sum, num) => sum + num, 0); // 4 + 16 + 36 = 56
+  console.log(result); // 56
+```
+
+### **47. What is ECMAScript?**
 - ECMAScript (ES) is the standardized specification for JavaScript, maintained by ECMA International.
 - It defines the core features of JavaScript, ensuring consistency across different implementations such as browsers and Node.js.
 
-### **47. What is the difference between ECMAScript and JavaScript?**
+### **48. What is the difference between ECMAScript and JavaScript?**
 - ECMAScript is the standard that defines how JavaScript should work. JavaScript is the implementation of ECMAScript in browsers and other environments.
 
-### **48. What is the purpose of the `spread` (`...`) and `rest` (`...`) operators?**
+### **49. What is the purpose of the `spread` (`...`) and `rest` (`...`) operators?**
 - **Spread Operator (`...`)** – Expands arrays or objects into individual elements.  
   ```javascript
   const arr = [1, 2, 3];
@@ -324,7 +350,7 @@ function example() {
   console.log(sum(1, 2, 3, 4)); // 10
   ```
 
-### **48: What is optional chaining (?.) in ECMAScript?**
+### **50: What is optional chaining (?.) in ECMAScript?**
 - Optional chaining allows safe access to deeply nested object properties without checking if intermediate properties exist.
 ```javascript
   const user = { profile: { name: "John" } };
@@ -332,11 +358,11 @@ function example() {
   console.log(user.address?.city); // undefined (instead of an error)
 ```
 
-### **49. What is the difference between null and undefined?**
+### **51. What is the difference between null and undefined?**
 - **null** – Explicitly set value, representing the absence of an object.
 - **undefined** – A variable that has been declared but not assigned a value.
 
-### **50. What is the Promise.all() method?**
+### **52. What is the Promise.all() method?**
 - Promise.all() takes multiple promises and resolves when all promises are fulfilled or rejects if one fails.
 ```javascript
   const p1 = Promise.resolve(10);
@@ -345,16 +371,16 @@ function example() {
   Promise.all([p1, p2, p3]).then(console.log); // [10, 20, 30] after 1 second
 ```
 
-### **51. What is TypeScript?**
+### **53. What is TypeScript?**
 - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
 - Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
 - Angular is entirely written in TypeScript for better scalability and maintainability.
 
-### **52. What is an abstract class in TypeScript and when would you use it?**
+### **54. What is an abstract class in TypeScript and when would you use it?**
 - A class that cannot be instantiated directly but provides a blueprint for subclasses.
 - Defines common properties and methods for derived classes.
 
-### **53. How do namespaces work in TypeScript?**
+### **55. How do namespaces work in TypeScript?**
 - Used to organize code and prevent global scope pollution.
 - Groups related interfaces, functions, and classes together.
 
