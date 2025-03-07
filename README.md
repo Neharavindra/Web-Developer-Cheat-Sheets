@@ -12,7 +12,7 @@ This repository is designed to help aspiring and experienced front-end developer
 ✅ **React Interview Questions** – Covers everything from **components, hooks, state management (Redux, Context API), performance optimization, lifecycle methods**, and more.  
 ✅ **JavaScript & TypeScript Questions** – Covers **ES6+, closures, promises, async/await, prototypes, hoisting, and TypeScript fundamentals**.  
 ✅ **RxJS & State Management** – Questions on **observables, subjects, operators, and NgRx best practices**.  
-✅ **Performance Optimization & Testing** – Questions on **debugging, rendering performance, unit testing, and E2E testing strategies**.  
+✅ **Performance Optimization** – Questions on **debugging, rendering performance** and more.  
 
 ## **Who Is This For?**  
 📌 **Beginners** – Looking to strengthen core concepts.  

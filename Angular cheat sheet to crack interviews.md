@@ -341,20 +341,25 @@ this.userForm = new FormGroup({
 - Uses HTTP caching headers (`ETag`, `Cache-Control`).
 - Improves response times and reduces server load.
 
-### **34. The architectural principles of microservices and their application in Angular projects?**
-- Microservices decompose an application into independent services.
-- Angular consumes microservices via REST APIs, enabling modular front-end development.
-
-### **35. What is the concept of service workers in Angular and their role in building progressive web apps?**
+### **34. What is the concept of service workers in Angular and their role in building progressive web apps?**
 - Service workers run in the background, enabling offline support and caching strategies.
 - Used for push notifications, background sync, and performance improvements.
 
-### **36. What are route guards in angular?**
+### **35. What are route guards in angular?**
 - Route Guards in Angular control access to routes based on conditions.
 - Implemented using CanActivate, CanDeactivate, CanLoad, Resolve, and CanActivateChild.
 - They return true (allow navigation) or false (prevent navigation).
 
-### **37. Explain the difference between AngularJS and Angular?**
+| Guard          | Purpose      |
+|----------------|----------------------------|
+| CanActivate	| Prevents unauthorized users from accessing a route.|
+| CanDeactivate	| Warns users before leaving a page (e.g., unsaved changes). |
+| CanLoad	| Restricts lazy-loaded module access based on conditions. |
+| Resolve	| Pre-fetches data before activating a route. |
+| CanActivateChild	| Applies CanActivate logic to child routes. |
+
+
+### **36. Explain the difference between AngularJS and Angular?**
 
 | Feature            | AngularJS (1.x)              | Angular (2+)                     |
 |--------------------|----------------------------|----------------------------------|
@@ -370,5 +375,38 @@ this.userForm = new FormGroup({
 | **DOM Handling**   | Manipulated directly      | Uses virtual DOM for efficiency |
 | **Support & Updates** | Discontinued (no updates) | Actively maintained by Google  |
 
+### **37. What is Default route and Wildcard route in angular?**
+1. **Default Route `path: ''`**:
+- Redirects users to a default component when they visit the base URL.
+- Typically used to load the home page or a landing page.
+- Implemented using the redirectTo property.
+```javascript
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' }, // Default route
+  { path: 'home', component: HomeComponent }
+];
+```
+2. **Wildcard Route `path: '**'`**:
+- Captures all undefined or invalid routes.
+- Typically used to show a "Page Not Found" (404) component.
+```javascript
+const routes: Routes = [
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '**', component: PageNotFoundComponent } // Wildcard route
+];
+```
+
+### **38. What is Angular CLI?**
+- Angular CLI (Command Line Interface) is a powerful tool that helps developers create, manage, and build Angular applications efficiently.
+- It automates tasks like project setup, component creation, testing, and deployment.
+
+| Feature	| Description |
+|--------------------|----------------------------|
+| Project Setup	| Quickly creates a new Angular app using ng new project-name. |
+| Generate Files |	Generates components, services, modules, and more using ng generate. |
+| Serve Application |	Runs a development server using ng serve. |
+| Build & Optimize |	Builds the project for production using ng build --prod. |
+| Testing	| Runs unit tests (ng test) and end-to-end tests (ng e2e). |
+| Routing & Modules |	Automatically adds routing and modules with --routing and --module flags. |
 
 ---
