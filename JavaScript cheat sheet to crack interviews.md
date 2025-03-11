@@ -170,8 +170,8 @@ console.log(`Hello, ${name}!`);
 - **Confirm**: Asks for user confirmation (OK/Cancel).
 - **Prompt**: Asks for user input.
 
-### **30. What is the Event Loop & Microtask Queue?**
-- The Event Loop is a mechanism that allows JavaScript to execute asynchronous operations.
+### **30. What is Event Loop & Microtask Queue?**
+- Event Loop is a mechanism that allows JavaScript to execute asynchronous operations.
 - It continuously checks the call stack to see if there are any functions to execute and if the call stack is empty, it checks the callback queue for events that need to be processed.
 - Microtasks (Promises, `process.nextTick`) have higher priority and execute before callbacks (`setTimeout`, `setInterval`) from the queue.
 
@@ -204,7 +204,7 @@ fetchData();
 - JavaScript manages memory using garbage collection.
 
 ### **35. What is currying in JavaScript?**
-- Currying transforms a function with multiple arguments into a sequence of functions.
+- Currying transforms a function with multiple arguments into a sequence of functions with single arguments.
 ```javascript
 const add = a => b => c => a + b + c;
 console.log(add(1)(2)(3)); // 6
@@ -411,7 +411,18 @@ function outer() {
 outer(); // Output: 10
 ```
 
-### **55. What is shadowing in JavaScript?**
+### **55. Difference between scope chaining and closure?**
+
+|Feature |	Scope Chaining	| Closure |
+| ------ | --------------- | -------- |
+| Definition |	The mechanism where nested functions can access variables from their outer scopes.  Variables flow downward (from parent to child). |	A function retaining access to its lexical scope even after the outer function has returned. Inner function "remembers" outer variables even after execution.|
+| Access Scope	| Inner functions can access variables of parent functions and the global scope. |	Even after the parent function executes and is removed from the stack, the inner function still remembers and can use its parent's variables. |
+| When It Occurs |	Happens whenever functions are nested inside another function. |	Happens when an inner function is returned from an outer function. |
+| Use Case	| Used for organizing code and variable access in a structured way. |	Used for data privacy, function factories, and maintaining state across function calls. |
+| Key Benefit	| Allows functions to access variables from parent scopes for modularity. |	Helps in data encapsulation and preserving state. |
+
+
+### **56. What is shadowing in JavaScript?**
 - Shadowing occurs when a variable in the inner scope has the same name as a variable in the outer scope.
 - The inner variable overrides the outer variable within its scope.
 ```javascript
@@ -424,37 +435,73 @@ test(); // Output: Local
 console.log(x); // Output: Global
 ```
 
-### **56. What is TypeScript?**
+### **57. What is TypeScript?**
 - A superset of JavaScript that adds static typing to the language. It is developed by Microsoft.
 - Adds features like type safety, interfaces, async/await, and compiles to JavaScript.
 - Angular is entirely written in TypeScript for better scalability and maintainability.
 
-### **57. What is an abstract class in TypeScript and when would you use it?**
+### **58. What is an abstract class in TypeScript and when would you use it?**
 - A class that cannot be instantiated directly but provides a blueprint for subclasses.
 - Defines common properties and methods for derived classes.
 
-### **58. How do namespaces work in TypeScript?**
+### **59. How do namespaces work in TypeScript?**
 - Used to organize code and prevent global scope pollution.
 - Groups related interfaces, functions, and classes together.
 
-### **59. What are the data types in TypeScript?**
+### **60. What are the data types in TypeScript?**
 - TypeScript supports static typing with the following data types:
 1. **Primitive Types:** number, string, boolean, bigint, null, undefined, symbol.
 2. **Object Types:** Array, Tuple, Object.
 3. **Special Types:** any, void, never, unknown.
 
-### **60. What is type casting?**
+### **61. What is type casting?**
 - Type casting allows converting one type to another using:
-- **Angle-bracket syntax**: <Type>variable
-- **as keyword**: variable as Type
+- **Angle-bracket syntax**: `<Type>variable`
+- **as keyword**: `variable as Type`
 
-### **61. How do functions work in typescript?**
+### **62. How do functions work in typescript?**
 - Functions in TypeScript support parameter types, return types, optional parameters, and default values.
 
-### **62. What is class visibility in TypeScript?**
+### **63. What is class visibility in TypeScript?**
 - TypeScript uses access modifiers to control visibility:
 1. **public**: Accessible everywhere (default).
 2. **private**: Accessible only inside the class.
 3. **protected**: Accessible inside the class and subclasses.
+
+### **64. What are ES6 features?**
+1. **let & const** (Block-Scoped Variables)
+- let → Block-scoped, re-assignable.
+- const → Block-scoped, cannot be reassigned.
+2. **Arrow Functions (=>)**
+- Shorter function syntax.
+- Does not have its own this context.
+3. **Template Literals (````)**
+- Supports multi-line strings.
+- Allows embedded expressions using ${}.
+4. **Default Parameters**
+- Assigns default values to function parameters.
+5. **Destructuring Assignment**
+- Extracts values from arrays/objects easily.
+```javascript
+const { name, age } = { name: "Alice", age: 25 };
+```
+6. **Spread & Rest Operators (...)**
+- Spread (...) → Expands elements of an array/object.
+- Rest (...) → Collects remaining elements into an array.
+7. **Classes & Inheritance**
+- Supports Object-Oriented Programming (OOP).
+- `class` and `extends` for modular code.
+8. **Modules (import/export)**
+- Enables code modularity & reusability.
+```javascript
+export function square(x) { return x * x; }
+import { square } from './math.js';
+```
+9. **Promises (async/await)**
+- Handles asynchronous operations efficiently.
+- Avoids callback hell.
+10. **Map & Set**
+- Map → Stores key-value pairs with unique keys.
+- Set → Stores unique values only.
 
 ---

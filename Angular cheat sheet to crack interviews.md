@@ -6,7 +6,7 @@
 - It follows the component-based architecture, promoting reusability and maintainability.
 - Uses two-way data binding, dependency injection (DI), and directives to enhance functionality.
 - Supports modular development with NgModules and lazy loading for performance optimization.
-- Commonly used for enterprise applications due to its robust ecosystem and tooling support.
+- Commonly used for large scale enterprise applications due to its robust ecosystem and tooling support.
 
 ### **2. Main features of Angular:**
 - Modular architecture with reusable components.
@@ -16,17 +16,17 @@
 - Comprehensive testing tools like Jasmine and Karma.
 
 ### **3. What are the files created with Angular application?**
-1. `package.json`: All the packages required for the application.
+1. `package.json`- All the packages required for the application. It includes -
   - **scripts** - How to run, build, test the application.
   - **dependencies** - Packages that goes into production build.
   - **devDependencies** - Packages only used during development.
-2. `angular.json`: Contains all configurations of the app. Information about workspaces and applications in it.
-3. `karma.conf.json`:  Configuration for unit testing with Karma. It uses Karma to run all tests and jasmine to write all tests.
+2. `angular.json`- Contains all configurations of the app. Information about workspaces and applications in it.
+3. `karma.conf.json`-  Configuration for unit testing with Karma. It uses Karma to run all tests and jasmine to write all tests.
 4. `browserlist` - List of all supporting browsers.
 5. `node_modules` - Includes all the packages installed.
 6. `tsconfig.json` - TypeScript configuration file. Specifies TypeScript compilation rules and target environments.
 7. `src` - Contains all source code of the Angular app.
-8. `app` – Main application logic.
+8. `app` – Main application logic.  It includes -
   - `app.module.ts` – Root module where components, services, and modules are registered.
   - `app.component.ts` – Root component (entry point for the UI).
   - `app.component.html` – Template (HTML structure) of the main component.
@@ -50,7 +50,7 @@
 - Binding syntax is used to connect data between the component and the template.
 - There are four types:
  1. **Interpolation (`{{}}`)**:
-  - Used to bind **component properties** inside the template.
+  - Used to bind component properties inside the template.
 ```html
 <p>Hello, {{ username }}!</p>
 ```
@@ -60,12 +60,12 @@
 <input [value]="userInput">
 ```
 3. **Event Binding (`(event)`)**:
-- Listens for **user events** and executes a component method.
+- Listens for user events and executes a component method.
 ```html
 <button (click)="onSubmit()">Submit</button>
 ```
  4. **Two-Way Binding (`[()]`)**:
-- Combines **property binding** and **event binding** for real-time data synchronization.
+- Combines property binding and event binding for real-time data synchronization.
 ```html
 <input [(ngModel)]="name"> 
 ```
@@ -73,7 +73,7 @@
 ### **6. What are Directives?**
 - Directives are special instructions in Angular that extend HTML functionality.
 - They help in manipulating the DOM by adding behavior to elements.
-- Angular has three types of directives:
+- Angular has four types of directives:
 1. **Component Directives**:
 - Components are a type of directive with a template.
 - Defined using @Component() decorator.
@@ -87,9 +87,9 @@ export class ExampleComponent {}
 2. **Structural Directives**:
 - Modify the structure of the DOM (add/remove elements dynamically).
 - Example directives: 
-    ***ngIf**: Doesn't display in DOM if condition isn't met.
-    ***ngFor**: Used for binding arrays. Re-renders all data if anything changes.
-    ***ngSwitch**: Uses ngSwitchCase for matching cases and ngSwitchDefault for a fallback option.
+   - **ngIf**: Doesn't display in DOM if condition isn't met.
+   - **ngFor**: Used for binding arrays. Re-renders all data if anything changes.
+   - **ngSwitch**: Uses ngSwitchCase for matching cases and ngSwitchDefault for a fallback option.
 ```html
 <p *ngIf="isVisible">This text appears if isVisible is true.</p>
 <ul>
@@ -159,7 +159,7 @@ export class SquarePipe implements PipeTransform {
 - Services in Angular are used to share data, logic, and functionality across multiple components.
 - They help in code reusability, separation of concerns, and dependency injection.
 - Services are created using the @Injectable() decorator.
-- Service: 
+- Service:
 ```javascript
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -173,7 +173,7 @@ constructor(private dataService: DataService) {}
 ### **12. How do components interact in angular?**
 - In Angular, components communicate and share data using the following methods:
 1. **Parent to Child Communication** – @Input()
-The parent component passes data to the child component using property binding.
+- The parent component passes data to the child component using property binding.
 ```javascript
 @Component({ selector: 'app-child', template: '<p>{{ data }}</p>' })
 export class ChildComponent {
@@ -184,7 +184,7 @@ export class ChildComponent {
 <app-child [data]="parentData"></app-child>
 ```
 2. **Child to Parent Communication** – @Output() & EventEmitter
-The child component emits events to send data back to the parent.
+- The child component emits events to send data back to the parent.
 ```javascript
 @Component({ selector: 'app-child', template: '<button (click)="sendMessage()">Click</button>' })
 export class ChildComponent {
@@ -198,7 +198,7 @@ export class ChildComponent {
 <app-child (message)="receiveMessage($event)"></app-child>
 ```
 3. **Sibling Communication** – Shared Service
-A service can store and share data between unrelated components.
+- A service can store and share data between unrelated components.
 ```javascript
 @Injectable({ providedIn: 'root' })
 export class DataService {
@@ -408,5 +408,91 @@ const routes: Routes = [
 | Build & Optimize |	Builds the project for production using ng build --prod. |
 | Testing	| Runs unit tests (ng test) and end-to-end tests (ng e2e). |
 | Routing & Modules |	Automatically adds routing and modules with --routing and --module flags. |
+
+### **39. How to Implement Lazy Loading in Angular?**
+- Lazy loading delays module loading until it is needed, improving performance.
+1. Create a feature module (Example: UserModule).
+2. Use loadChildren in app-routing.module.ts:
+```typescript
+{ path: 'user', loadChildren: () => import('./user/user.module').then(m => m.UserModule) }
+```
+3. Remove UserModule from imports in AppModule.
+
+### **40. What are Single Page Applications (SPAs)?**
+- SPAs dynamically update content without reloading the page.
+- Uses routing (RouterModule) to load components efficiently.
+- Improves performance & user experience compared to traditional multi-page apps.
+
+### **41. What is Angular CDK (Component Dev Kit)?**
+- A lightweight toolkit for building reusable UI components without Angular Material.
+- Features Include: Drag & Drop, Virtual Scrolling, Overlay, Accessibility (A11Y), Tree Structures.
+
+### **42. What is Polyfills in Angular?**
+- Polyfills are JavaScript scripts that provide modern features in older browsers that don’t support them.
+- They mimic new JavaScript/HTML/CSS functionalities for older browsers like IE11.
+- Angular includes a polyfills.ts file where necessary polyfills can be added.
+- It contains ES6+, zone.js, and web API polyfills required for Angular to run in various browsers.
+- If a browser doesn’t support a feature, it loads the polyfill as a fallback.
+- Modern browsers ignore unnecessary polyfills to optimize performance.
+- Enables features like Promises, Fetch API, and async/await in older browsers.
+
+### **43. What is ng-template?**
+- Defines a reusable HTML structure without rendering it immediately.
+
+### **44. Difference between ngOnInit and constructor?**
+
+|Feature |	constructor() |	ngOnInit() |
+|-----------|-----------|-------------|
+| Execution |	Runs when the class is instantiated |	Runs after component initialization |
+| Purpose |	Used for dependency injection | 	Used for initialization logic |
+| Access to Input Data	| No	| Yes |
+
+### **45. What is Server-Side Rendering (SSR) in Angular?**
+- Server-Side Rendering (SSR) is a technique where Angular applications are rendered on the server instead of the browser before sending the final HTML to the client.
+- Angular normally runs as a Single Page Application (SPA) where the browser downloads JavaScript, processes it, and then renders the page.
+- With SSR:
+1. User Requests a Page → Browser sends a request to the server.
+2. Server Generates Pre-Rendered HTML → The server processes the Angular components and sends the fully rendered HTML to the client.
+3. Client Loads the Page → The browser displays the content instantly.
+4. Angular Hydration (Reattaching Events & Logic) → The application becomes interactive once the JavaScript is loaded.
+- Improves SEO, performance, and faster initial load time.
+- Implemented using Angular Universal `(@angular/platform-server)`.
+
+### **46. What is Zone.js in Angular?**
+- Zone.js is a JavaScript library used by Angular for change detection. It modifies browser APIs like setTimeout, event listeners, and promises to detect asynchronous operations and trigger UI updates automatically.
+- Tracks tasks like HTTP requests, timers, and user interactions.
+- Notifies Angular when something changes, updating the UI without manually calling `ChangeDetectorRef.detectChanges()`.
+
+### **47. What Are Decorators in Angular?**
+- Decorators in Angular are special functions that enhance classes, methods, properties, and parameters by adding metadata. They are part of TypeScript and play a crucial role in Angular's architecture.
+1. **Class Decorators** – Used to define Angular classes like components, directives, modules, and services. Example: `@Component(), @Directive(), @NgModule(), @Injectable()`
+2. **Property Decorators** – Used to bind data to a class property.
+Examples: `@Input(), @Output(), @HostBinding()`
+3. **Method Decorators** – Modify or extend the behavior of class methods. Examples: `@HostListener()` (listens for events on the host element).
+4. **Parameter Decorators** – Used inside constructors to inject dependencies. Example: `@Inject()`
+
+### **48. What is Metadata in Angular Decorators?**
+- Metadata in Angular provides information about a class, method, or property to Angular, helping it understand how to process the decorated element. 
+- It is an object passed inside decorators like @Component(), @NgModule(), and @Injectable() that defines their behavior.
+ Example: Metadata in @Component()
+```typescript
+@Component({
+  selector: 'app-hello', // Defines the custom HTML tag for component
+  template: '<h1>Hello, {{name}}</h1>', // Specifies the HTML structure
+  styles: ['h1 { color: blue; }'] // Adds CSS styling
+})
+```
+
+### **49. What is @NgModule in Angular?**
+- @NgModule is a decorator that defines an Angular module, which is a container for components, directives, services, and other modules. It helps in structuring and organizing the application.
+
+### **50. What is a Module in Angular?**
+- A module in Angular is a container that organizes related components, directives, services, and pipes into a functional unit.
+Types of Modules in Angular -
+1. **Root Module (AppModule)** – The main entry point of an Angular application.
+2. **Feature Modules** – Manages specific features.
+3. **Shared Modules** – Contains reusable components, directives, and pipes.
+4. **Core Module** – Stores singleton services (e.g., authentication, logging).
+
 
 ---
